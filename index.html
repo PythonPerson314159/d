@@ -14,11 +14,12 @@
   const kpuz = new KPuzzle(puz);
 
   const solved = kpuz.defaultPattern;
-  const scram = kpuz.algToTransformation(new Alg("D"));
+  const scram = kpuz.algToTransformation(new Alg("U"));
   const newState = solved.apply(scram);
 
   console.log(newState);
 </script>
 </body>
 </html>
+
 
