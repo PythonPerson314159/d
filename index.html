@@ -1,15 +1,17 @@
 <script type="module">
-  import { cube2x2x2 } from "https://cdn.cubing.net/v0/js/cubing/puzzles";
+  import { cube3x3x3 } from "https://cdn.cubing.net/v0/js/cubing/puzzles";
   import { KPuzzle } from "https://cdn.cubing.net/v0/js/cubing/kpuzzle";
+  import { Alg } from "https://cdn.cubing.net/v0/js/cubing/alg";
 
   // top-level await works because type="module"
-  const puz = await cube2x2x2.kpuzzle();
+  const puz = await cube3x3x3.kpuzzle();
   const kpuz = new KPuzzle(puz);
 
   const solved = kpuz.defaultPattern;
-  const scram = kpuz.algToTransformation("U'");
+const scram = kpuz.algToTransformation(new Alg("D"));
   const newState = solved.apply(scram);
 
   console.log(newState);
 </script>
+
 
